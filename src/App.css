@@ -1,39 +1,135 @@
 body {
+  margin          : 0;
+  padding         : 0;
   background-image: url(https://images.unsplash.com/photo-1504333638930-c8787321eee0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMzk2fQ&auto=format&fit=crop&w=1350&q=80);
-  height          : 800px;
-  max-width: 800px;
-  position        : absolute;
+  position        : relative;
+  overflow        : hidden;
+  left            : 0;
 }
 
-.target {
-  width   : 1280px;
-  height  : 720px;
-  position: absolute;
-  z-index : 10;
+.BackStars1 {
+  position  : absolute;
+  z-index   : 1;
+  height    : 250px;
+  margin-top: 20%;
 }
 
-.target2 {
-  width   : 1280px;
-  height  : 720px;
-  position: absolute;
-  z-index : 20;
+.BackStars2 {
+  position  : absolute;
+  z-index   : 2;
+  height    : 280px;
+  margin-top: 20%;
+}
+
+.BackStars3 {
+  position     : absolute;
+  z-index      : 3;
+  height       : 300px;
+  margin-bottom: 40%;
+}
+
+.BackStars4 {
+  position  : absolute;
+  z-index   : 4;
+  height    : 350px;
+  margin-top: 10%;
 }
 
 .helicopter {
-  height  : 110px;
-  width   : 180px;
+  height     : 110px;
+  width      : 180px;
+  margin-left: 20%;
+  margin-top : 20%;
+  position   : absolute;
+  z-index    : 3;
+}
+
+
+.Stone1 {
+  position  : absolute;
+  z-index   : 1;
+  height    : 100px;
+  width     : 100px;
+  margin-top: 25%;
+}
+
+.Stone2 {
+  width   : max-content;
+  display : inline-block;
   position: absolute;
-  z-index : 999;
-  top     : 0;
-  left    : 20%;
+  z-index : 2;
+  height  : 150px;
+  width   : 150px;
+
+}
+
+.Stone3 {
+  display   : inline-block;
+  position  : absolute;
+  z-index   : 3;
+  margin-top: 20%;
+  height    : 180px;
+  width     : 180px;
+  margin-top: 28%;
+}
+
+.Stone4 {
+  display   : inline-block;
+  position  : absolute;
+  z-index   : 4;
+  height    : 400px;
+  width     : 400px;
+  margin-top: 28%;
+}
+
+.buttons-div {
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+  justify-content: center;
+  padding        : 2%;
+  width          : 100%;
+}
+
+.item1 {
+  grid-area: button-up;
+}
+
+.item2 {
+  grid-area: button-down;
+}
+
+.up-down-btn-div {
+  display: grid;
+  grid-template-areas:
+    'button-up',
+    'button-down'
+}
+
+.button-up {
+  padding: 10px 20px;
+  z-index: 100;
 }
 
 .button-down {
-  position: absolute;
-  z-index : 899;
-  bottom  : 20%;
-  left    : 0%
+  padding: 10px 20px;
+  z-index: 100;
 }
+
+.speed-up {
+  z-index: 100;
+  padding: 10px 20px;
+}
+
+.speed-slow {
+  z-index: 100;
+  padding: 10px 20px;
+
+}
+
+
+
+
 
 /* 
 .App-logo {

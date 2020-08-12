@@ -1,22 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import useWebAnimations from "@wellyshen/use-web-animations";
-import './App.css'
+import '../App.css'
 
-function BackStars() {
+function Stone4({ speed }) {
 
-    // const starClass = {
-    //     width: '1280px',
-    // }
-
-
-
-    const { ref, playState } = useWebAnimations({
+    const { ref, playState, getAnimation } = useWebAnimations({
         keyframes: [
-            { transform: `translate(100%, 0%)` },
+            { transform: `translate(200%, 0%)` },
             { transform: `translate(-100%, 0%)` },
         ],
         timing: {
-            duration: 8000, // Run for 1000ms
+            duration: 20000, // Run for 1000ms
             iterations: Infinity, // Repeat once
             direction: "normal", // Run the animation forwards and then backwards
             // easing: "ease-in-out", // Use a fancy timing function
@@ -30,10 +24,20 @@ function BackStars() {
         onFinish: ({ playState, animate, animation }) => {
             // Triggered when the animation enters the finished state (Google Chrome: available in v84+)
         },
-        // More useful options...
     });
 
-    return <img className="target" ref={ref} src='https://pngimg.com/uploads/star/star_PNG76860.png' />
+    // update speed using props
+    useEffect(() => {
+        const speedUp = () => {
+            const animation = getAnimation();
+            animation.updatePlaybackRate(animation.playbackRate + speed);
+        };
+        speedUp()
+    }, [speed])
+
+
+
+    return <img className="Stone4" ref={ref} src='https://images.vexels.com/media/users/3/145874/isolated/preview/b55eccb8fb67c9fd017e5df9f47cab3e-stone-boulder-by-vexels.png' />
 }
 
-export default BackStars
+export default Stone4

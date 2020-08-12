@@ -1,19 +1,18 @@
-import React, {useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import useWebAnimations from "@wellyshen/use-web-animations";
 import './App.css'
-import App from './App';
+
+function BackStars1({ speed }) {
 
 
-
-function BackStars2({ speed }) { //props from App
 
     const { ref, playState, getAnimation } = useWebAnimations({
         keyframes: [
-            { transform: `translate(250%, 0%)` },
-            { transform: `translate(-150%, 0%)` },
+            { transform: `translate(150%, 0%)` },
+            { transform: `translate(-100%, 0%)` },
         ],
         timing: {
-            duration: 20000, // Run for 1000ms
+            duration: 25000, // Run for 1000ms
             iterations: Infinity, // Repeat once
             direction: "normal", // Run the animation forwards and then backwards
         },
@@ -39,7 +38,12 @@ function BackStars2({ speed }) { //props from App
     }, [speed])
 
 
-    return <img className="BackStars2" ref={ref} src='https://pngimg.com/uploads/star/star_PNG76860.png' />
+
+    return (
+        <>
+            <img className="BackStars1" ref={ref} src='https://pngimg.com/uploads/star/star_PNG76860.png' />
+        </>
+    )
 }
 
-export default BackStars2
+export default BackStars1

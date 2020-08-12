@@ -1,21 +1,19 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import useWebAnimations from "@wellyshen/use-web-animations";
-import './App.css'
-import App from './App';
+import '../App.css'
 
-
-
-function BackStars2({ speed }) { //props from App
+function Stone2({speed}) {
 
     const { ref, playState, getAnimation } = useWebAnimations({
         keyframes: [
-            { transform: `translate(250%, 0%)` },
-            { transform: `translate(-150%, 0%)` },
+            { transform: `translate(300%, 0%)` },
+            { transform: `translate(-100%, 0%)` },
         ],
         timing: {
             duration: 20000, // Run for 1000ms
             iterations: Infinity, // Repeat once
             direction: "normal", // Run the animation forwards and then backwards
+            // easing: "ease-in-out", // Use a fancy timing function
         },
         onReady: ({ playState, animate, animation }) => {
             // Triggered when the animation is ready to play (Google Chrome: available in v84+)
@@ -39,7 +37,8 @@ function BackStars2({ speed }) { //props from App
     }, [speed])
 
 
-    return <img className="BackStars2" ref={ref} src='https://pngimg.com/uploads/star/star_PNG76860.png' />
+
+    return <img className="Stone2" ref={ref} src='https://images.vexels.com/media/users/3/145874/isolated/preview/b55eccb8fb67c9fd017e5df9f47cab3e-stone-boulder-by-vexels.png' />
 }
 
-export default BackStars2
+export default Stone2
