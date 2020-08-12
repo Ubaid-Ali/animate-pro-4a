@@ -4,41 +4,28 @@ import '../App.css'
 
 function Stone3({ speed }) {
 
-    const { ref, playState, getAnimation } = useWebAnimations({
+    const { ref, getAnimation } = useWebAnimations({
         keyframes: [
-            { transform: `translate(200%, 0%)` },
-            { transform: `translate(-100%, 0%)` },
+            { transform: `translate(800%, 0%)` },
+            { transform: `translate(-100%, 50%)` },
         ],
         timing: {
-            duration: 20000, // Run for 1000ms
-            iterations: Infinity, // Repeat once
-            direction: "normal", // Run the animation forwards and then backwards
-            // easing: "ease-in-out", // Use a fancy timing function
+            duration: 20000, // Run for 20s
+            iterations: Infinity, // Repeat infinite
+            direction: "normal", // Run the animation forwards
         },
-        onReady: ({ playState, animate, animation }) => {
-            // Triggered when the animation is ready to play (Google Chrome: available in v84+)
-        },
-        onUpdate: ({ playState, animate, animation }) => {
-            // Triggered when the animation enters the running state or changes state
-        },
-        onFinish: ({ playState, animate, animation }) => {
-            // Triggered when the animation enters the finished state (Google Chrome: available in v84+)
-        },
-        // More useful options...
     });
 
     // update speed using props
     useEffect(() => {
         const speedUp = () => {
             const animation = getAnimation();
-            animation.updatePlaybackRate(animation.playbackRate + speed);
+            animation.updatePlaybackRate(animation.playbackRate = speed);
         };
         speedUp()
-    }, [speed])
+    })
 
-
-
-    return <img className="Stone3" ref={ref} src='https://images.vexels.com/media/users/3/145874/isolated/preview/b55eccb8fb67c9fd017e5df9f47cab3e-stone-boulder-by-vexels.png' />
+    return <img className="Stone3" ref={ref} src='https://i.pinimg.com/originals/3a/ae/29/3aae2993f4b0e46444c1a0987962a2a1.png' alt='stone' />
 }
 
 export default Stone3
